@@ -8,6 +8,19 @@ return {
     config = true,
   },
 
+  {
+    'triglav/vim-visual-increment',
+    keys = { '<C-a>', '<C-x>' },
+  },
+
+  {
+    'tpope/vim-surround',
+    keys = { 'ys', 'cs', 'ds' }, -- 基本快捷鍵
+    config = function()
+      require("nvim-surround").setup()
+    end
+  },
+
   -- switch true/false etc.
   {
     'AndrewRadev/switch.vim',
