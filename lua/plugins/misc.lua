@@ -3,7 +3,10 @@
 -- ==========================
 
 return {
-  { 'kana/vim-textobj-user' },
+  {
+    'windwp/nvim-autopairs',
+    config = true,
+  },
 
   -- switch true/false etc.
   {

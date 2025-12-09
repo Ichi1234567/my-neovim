@@ -18,7 +18,6 @@ return {
   { 'tomtom/tcomment_vim' },
   -- { 'nvim-treesitter/nvim-treesitter' }
   -- { 'Raimondi/delimitMate' },
-  { 'windwp/nvim-autopairs' },
   { 'triglav/vim-visual-increment' },
   { 'tpope/vim-rails' },  -- ruby on rails
   { 'tpope/vim-bundler' },
