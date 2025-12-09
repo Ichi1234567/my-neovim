@@ -15,7 +15,6 @@ local modules = {
   require('plugins.system'),
   require('plugins.icon'),
   require('plugins.theme'),
-  require('plugins.fzf'),
   require('plugins.file'),
   require('plugins.git'),
   require('plugins.syntax'),
