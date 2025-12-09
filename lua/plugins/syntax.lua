@@ -22,5 +22,4 @@ return {
   { 'tpope/vim-rails' },  -- ruby on rails
   { 'tpope/vim-bundler' },
   { 'tpope/vim-rake' },
-  { 'nelstrom/vim-textobj-rubyblock', dependencies = { 'kana/vim-textobj-user' } },
 }
