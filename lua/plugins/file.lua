@@ -3,7 +3,6 @@
 -- ==========================
 -- { 'junegunn/vim-easy-align' }, -- vertical alignment
 return {
-  -- { 'nvim-tree/nvim-web-devicons', opts = {} },
   -- { 'nvim-neo-tree/neo-tree.nvim' }, -- 先不要、因為設定比較複雜
   {
     'nvim-tree/nvim-tree.lua',

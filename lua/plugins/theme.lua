@@ -2,11 +2,28 @@
 -- color theme / status bar
 -- ==========================
 return {
-  -- { 'altercation/vim-colors-solarized' },
   -- { 'folke/tokyonight.nvim' }
-  { 'catppuccin/nvim' },
+  {
+    'catppuccin/nvim',
+    config = function()
+      require('catppuccin').setup({
+        integrations = {
+          treesitter = true,
+          native_lsp = true,
+          cmp = true,
+          telescope = true,
+          gitsigns = true,
+          nvimtree = true,
+          mini = true,
+          noice = true,
+          markdown = true,
+          which_key = true,
+          fzf = true,
+        }
+      })
+    end
+  },
 
-  -- { 'itchyny/lightline.vim' }, -- status line
   {
     'nvim-lualine/lualine.nvim',
     config = function()
