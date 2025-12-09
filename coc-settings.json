@@ -1,0 +1,49 @@
+{
+  // ESLint + Prettier
+  "eslint.experimental.useFlatConfig": true,
+  "eslint.packageManager": "pnpm",
+  "eslint.workingDirectories": [{"mode": "auto"}],
+  "eslint.format.enable": true, // 讓 ESLint 來處理格式化
+
+  // TailwindCSS
+  "tailwindCSS.custom.serverPath": "~/.n/bin/tailwindcss-language-server",
+  "tailwindCSS.emmetCompletions": true,
+
+  // TypeScript / JavaScript 自動 import
+  "javascript.suggest.autoImports": true,
+  "typescript.preferences.includePackageJsonAutoImports": "auto",
+  "typescript.suggest.autoImports": true,
+
+  // YAML
+  "yaml.enable": true,
+  "yaml.format.enable": true,
+  "yaml.schemas": {
+    "https://raw.githubusercontent.com/microsoft/azure-pipelines-vscode/refs/heads/main/service-schema.json": ".pipeline/**/*.yml"
+  },
+
+  // Languageserver 自訂設定
+  "languageserver": {
+    "typescript": {
+      "command": "~/.n/bin/typescript-language-server",
+      "args": ["--stdio"],
+      "filetypes": ["typescript", "typescriptreact", "javascript", "javascriptreact"],
+      "rootPatterns": [
+        "*/tsconfig.app.json",
+        "*/tsconfig.spec.json",
+        "*/tsconfig.lib.json",
+        "*/tsconfig.json",
+        "tsconfig.json",
+        "package.json"
+      ]
+    },
+    "graphql": {
+      "command": "~/.n/bin/graphql-lsp",
+      "args": ["server", "-m", "stream"],
+      "filetypes": ["graphql"],
+      "additionalSchemes": [
+        "https://originals-api.dev.myviewboard.com/graphql",
+        "https://artisan.dev.myviewboard.com/graphql"
+      ]
+    }
+  }
+}
