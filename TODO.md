@@ -1,0 +1,3 @@
+* sym-link this dir to ~/.config/nvim
+    git clone ...
+    ln -s ~/repo/my-nvim ~/.config/nvim
