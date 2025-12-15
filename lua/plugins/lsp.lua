@@ -43,29 +43,52 @@ return {
     },
     config = function()
       require('codecompanion').setup({
-          -- 預設使用的 agent
-          default_agent = 'openai',
-          agents = {
-            openai = {
-              api_key_env = 'OPENAI_API_KEY',
-              model = 'gpt-4',  -- 或 gpt-4-32k / gpt-3.5-turbo
+          adapters = {
+            claude_code = function()
+              return require('codecompanion.adapters').extend('claude_code', {
+                  -- env = {
+                  --   ANTHROPIC_API_KEY = 'my-api-key',
+                  -- }
+                })
+            end,
+          },
+          strategies = {
+            chat = {
+              adapter = 'claude_code',
+              opts = {
+                system_prompt = '請用繁體中文回覆。',
+              },
             },
-            claude = {
-              api_key_env = 'ANTHROPIC_API_KEY',
-              model = 'claude-instant-v1',
+            inline = {
+              adapter = 'claude_code',
+            },
+            cmd = {
+              adapter = 'claude_code',
             },
           },
-          ui = {
-            floating = true,  -- 用浮動視窗顯示
-            width = 80,
-            height = 20,
-          },
-          mappings = {
-            accept = '<CR>',
-            reject = '<C-e>',
-            next = '<C-n>',
-            prev = '<C-p>',
-          },
+          -- -- 預設使用的 agent
+          -- default_agent = 'openai',
+          -- agents = {
+            --   openai = {
+              --     api_key_env = 'OPENAI_API_KEY',
+              --     model = 'gpt-4',  -- 或 gpt-4-32k / gpt-3.5-turbo
+            --   },
+            --   claude = {
+              --     api_key_env = 'ANTHROPIC_API_KEY',
+              --     model = 'claude-instant-v1',
+            --   },
+          -- },
+          -- ui = {
+            --   floating = true,  -- 用浮動視窗顯示
+            --   width = 80,
+            --   height = 20,
+          -- },
+          -- mappings = {
+            --   accept = '<CR>',
+            --   reject = '<C-e>',
+            --   next = '<C-n>',
+            --   prev = '<C-p>',
+          -- },
         })
     end,
   },
