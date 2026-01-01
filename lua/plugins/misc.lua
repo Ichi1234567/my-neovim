@@ -17,7 +17,10 @@ return {
 
   {
     'triglav/vim-visual-increment',
-    keys = { '<C-a>', '<C-x>' },
+    keys = {
+      { '<C-a>', mode = { 'n', 'x' } },  -- x = visual mode
+      { '<C-x>', mode = { 'n', 'x' } },
+    },
   },
 
   {
