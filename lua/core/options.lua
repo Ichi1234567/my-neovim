@@ -27,6 +27,7 @@ opt.wildmenu = true
 opt.visualbell = true
 opt.laststatus = 2
 opt.ttimeoutlen = 50
+opt.timeoutlen = 400  -- 建議 300-500ms
 opt.termguicolors = true
 
 -- ===================================================
