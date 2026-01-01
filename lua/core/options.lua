@@ -56,13 +56,13 @@ opt.mousehide = true
 -- ===================================================
 -- Backup / Undo
 -- ===================================================
-vim.fn.system('mkdir -vp ~/.backup/undo/ > /dev/null 2>&1')
+local undo_dir = vim.fn.expand('~/.backup/undo')
+vim.fn.mkdir(undo_dir, 'p')
+
 opt.backup = false
 opt.swapfile = false
 opt.undofile = true
-opt.backupdir = "~/.backup,."
-opt.directory = "~/.backup,~/tmp,."
-opt.undodir = "~/.backup/undo/,~/tmp,."
+opt.undodir = undo_dir
 
 -- ===================================================
 -- Folding
