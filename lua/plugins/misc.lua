@@ -24,10 +24,15 @@ return {
   },
 
   {
-    'tpope/vim-surround',
-    keys = { 'ys', 'cs', 'ds' }, -- 基本快捷鍵
+    'kylechui/nvim-surround',
+    keys = {
+      'ys',  -- normal: add surround
+      'cs',  -- normal: change surround
+      'ds',  -- normal: delete surround
+      { 'S', mode = 'x' },  -- visual: add surround
+    },
     config = function()
-      require("nvim-surround").setup()
+      require('nvim-surround').setup()
     end
   },
 
