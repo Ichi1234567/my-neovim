@@ -30,6 +30,13 @@ return {
       telescope.setup({
         defaults = {
           prompt_prefix = '🔍 ',
+          cache_picker = false,      -- 不快取搜尋結果
+          layout_config = {
+            preview_cutoff = 120,    -- 小視窗不預覽
+          },
+          file_ignore_patterns = {
+            '^%.git/',   -- ← 把 `.git` 資料夾藏起來（百分百有效）
+          },
         },
       })
 
