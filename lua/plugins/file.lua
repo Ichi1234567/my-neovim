@@ -22,7 +22,11 @@ return {
           group_empty = true,
         },
         filters = {
-          dotfiles = true,
+          dotfiles = false,     -- 顯示 dotfiles
+          git_ignored = true,   -- 隱藏 gitignore 內的檔案
+          custom = {            -- 手動隱藏特定檔案 (Vim regex)
+            '.git$',          -- 隱藏 .git 目錄
+          },
         },
       })
     end
