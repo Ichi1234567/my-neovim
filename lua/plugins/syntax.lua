@@ -18,20 +18,12 @@ return {
   -- markdown
   { 'tpope/vim-markdown' },
   {
-    -- npm install -g mermaid-cli
+    -- :call mkdp#util#install()
     'iamcco/markdown-preview.nvim',
-    keys = { '<leader>mp', '<leader>ms' },
-    config = function()
-      vim.g.mkdp_auto_start = 0          -- 不自動啟動
-      vim.g.mkdp_open_to_the_world = 1   -- 可以開到瀏覽器
-      vim.g.mkdp_browser = 'firefox'    -- 或 chrome
-      vim.g.mkdp_page_title = '${name}' -- 自訂 title
-      vim.cmd([[let g:mkdp_preview_options = {'mkit': {'theme': 'default'}}]])
-      vim.cmd([[
-        nmap <leader>mp :MarkdownPreview<CR>
-        nmap <leader>ms :MarkdownPreviewStop<CR>
-        ]])
-    end
+    ft = { 'markdown' },
+    build = function()
+      vim.fn['mkdp#util#install']()
+    end,
   },
 
 
