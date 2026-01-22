@@ -22,3 +22,8 @@ map('v', '>', '>gv', { desc = 'Indent right and reselect' })
 map('n', '<leader>bd', function()
   vim.cmd('silent! %bd|e#|bd#')  -- 關閉所有 buffer 但保留當前檔案
 end, { desc = 'Close other buffers' })
+
+-- ===================================================
+-- Search
+-- ===================================================
+map('n', '<C-n>', '<cmd>nohlsearch<CR>', { desc = 'Clear search highlight' })
