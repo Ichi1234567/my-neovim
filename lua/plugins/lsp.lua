@@ -10,10 +10,13 @@ return {
       -- 手動觸發補全
       { '<leader>cp', ':Copilot panel<CR>', desc = 'Open Copilot Panel' },
       { '<leader>cc', ':Copilot suggestion<CR>', desc = 'Trigger Copilot Suggestion' },
+      -- 接受 Copilot 建議（改用 Ctrl+J，避免與 Coc Tab 衝突）
+      { '<C-j>', 'copilot#Accept("\\<CR>")', mode = 'i', expr = true, replace_keycodes = false, silent = true },
     },
     config = function()
       -- 啟用 Copilot
-      vim.g.copilot_no_tab_map = true   -- 不綁定 Tab
+      vim.g.copilot_no_tab_map = true   -- 不綁定 Tab（避免與 Coc 衝突）
+      vim.g.copilot_assume_mapped = true -- 告知 Copilot 已手動綁定快捷鍵
       vim.g.copilot_filetypes = {
         ['*'] = true,
       }

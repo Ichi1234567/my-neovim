@@ -85,7 +85,8 @@ opt.hidden = true
 opt.history = 1000
 opt.autoread = true
 opt.backspace = { "indent", "eol", "start" }
-opt.completeopt = { "longest", "menuone" }
+-- 補全選單設定（支援 Coc + 原生補全）
+opt.completeopt = { "menu", "menuone", "noselect" }
 
 -- ===================================================
 -- 十字準星
