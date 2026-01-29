@@ -24,6 +24,7 @@
   // Languageserver 自訂設定
   "languageserver": {
     "typescript": {
+      // https://github.com/typescript-language-server/typescript-language-server
       "command": "~/.n/bin/typescript-language-server",
       "args": ["--stdio"],
       "filetypes": ["typescript", "typescriptreact", "javascript", "javascriptreact"],
@@ -37,6 +38,8 @@
       ]
     },
     "graphql": {
+      // https://github.com/graphql/graphiql
+      // https://www.npmjs.com/package/graphql-language-service-cli
       "command": "~/.n/bin/graphql-lsp",
       "args": ["server", "-m", "stream"],
       "filetypes": ["graphql"],
